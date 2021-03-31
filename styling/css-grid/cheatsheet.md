@@ -106,3 +106,11 @@ is equivalent to:
 
 [Example `.container`](4_grid-template_complex/styles.css)
 
+## minmax
+
+- tells what is the minimum and maximum value of row/column during templating
+- can take as an argument `min-content` which means that it's at least the size of the content (prevents overflow)
+- can also take as an argument `max-content` which will set value the maximum possible size of content (e.g. not wrapped text)
+[Example `.min-max` and `.max-content`](5_dynamic_sizing/styles.css)
+
+
