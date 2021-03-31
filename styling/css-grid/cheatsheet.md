@@ -113,4 +113,19 @@ is equivalent to:
 - can also take as an argument `max-content` which will set value the maximum possible size of content (e.g. not wrapped text)
 [Example `.min-max` and `.max-content`](5_dynamic_sizing/styles.css)
 
+## repeat
+- used to repeat given value or set of values
+- can be used with other operators e.g. `minmax`
+
+```css
+.repeat-multiple-min-max {
+  max-width: 100vw;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, minmax(50px, auto) minmax(75px, auto) minmax(25px, auto)); 
+  /* repeats pattern of 3 columns with given sizes 10, 15, 5 */
+}
+```
+
+[Example `.repeat-multiple-min-max`](5_dynamic_sizing/styles.css)
 
