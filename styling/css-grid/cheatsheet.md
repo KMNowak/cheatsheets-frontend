@@ -16,7 +16,7 @@ Cheatsheet for `css-grid`.
 - very clear, obvious way - what in css that is on a page
 - **overrides html order**
 
-[Example](grid-template-areas/index.html)
+[Example](1_grid-template-areas/index.html)
 ## grid-template-columns & grid-template-rows
 - defines exactly how columns/rows are spreading
 - `auto` value - then columns/rows spread evenly
@@ -30,20 +30,20 @@ Cheatsheet for `css-grid`.
 }
 ```
 
-[Example `.container`](grid-column_and_grid-row_manipulations/styles.css)
+[Example `.container`](2_grid-column_and_grid-row_manipulations/styles.css)
 
 ## grid-column-start & grid-row-start
 - tells which column/row (counting from 1 left/top side as starting column/row) the column/row starts
 - can have value of exact number e.g `4`
 - can have value of span e.g. `span 2` which means it starts from default place and spans 2 columns/rows
 
-[Example `.grid-item:nth-of-type(6)`](grid-column_and_grid-row_manipulations/styles.css)
+[Example `.grid-item:nth-of-type(6)`](2_grid-column_and_grid-row_manipulations/styles.css)
 ## grid-column-end & grid-row-end
 - tells which column the column/row ends (same as `grid-column-start`/`grid-row-start`)
 - can have exact value e.g. `3`
 - can have value of span e.g. `span 2` which means it automatically ends column/row 2 columns/rows after `grid-column-start`/`grid-row-start`
 
-[Example `.grid-item:nth-of-type(6)`](grid-column_and_grid-row_manipulations/styles.css)
+[Example `.grid-item:nth-of-type(6)`](2_grid-column_and_grid-row_manipulations/styles.css)
 ## grid-column
 - shorthand for `grid-column-start` & `grid-column-end`
 - should be used as in template: `grid-column: start_value / end_value`
@@ -60,7 +60,7 @@ is equivalent to:
   grid-column-end: span 2;
 }
 ```
-[Example `.grid-item:nth-of-type(6)`](grid-column_and_grid-row_manipulations/styles.css)
+[Example `.grid-item:nth-of-type(6)`](2_grid-column_and_grid-row_manipulations/styles.css)
 
 ## grid-row
 - same as [grid-column](##grid-column) but in context of rows
@@ -87,5 +87,22 @@ is equivalent to:
 
 **⚠ Be careful with using % value in pair with** `grid-gap` since it can cause overflow. It's safer to use `fr`.
 
-[Example `.container`](grid-template_named/styles.css)
+[Example `.container`](3_grid-template_named/styles.css)
+
+## Grid template areas, columns and rows complex example
+
+- all 3 templates can be joined making complex grids up to your needs
+```css
+.container {
+    grid-template-areas:
+      "header section"
+      "aside section" /* spread section and aside across 2 rows */
+      "aside footer";
+
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 6fr 1fr;
+  }
+```
+
+[Example `.container`](4_grid-template_complex/styles.css)
 
