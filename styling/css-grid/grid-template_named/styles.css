@@ -1,0 +1,31 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns:
+    [left-sidebar-start] 20% /* % can cause overflow! It's better to use fr */
+    [main-content-start] 60%
+    [right-sidebar-start] 20%;
+  grid-template-rows:
+    [body-start] 80%
+    [footer-start] 20%;
+}
+
+.container > * {
+  background-color: indianred;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.left-sidebar {
+  grid-row: body-start / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  grid-column: main-content-start / -1;
+}
+
