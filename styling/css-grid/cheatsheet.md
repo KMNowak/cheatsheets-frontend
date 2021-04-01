@@ -126,6 +126,18 @@ is equivalent to:
   /* repeats pattern of 3 columns with given sizes 10, 15, 5 */
 }
 ```
-
 [Example `.repeat-multiple-min-max`](5_dynamic_sizing/styles.css)
 
+## repeat with auto-fill and auto-fit
+
+- `repeat(auto-fill, 100px)` will wrap elements to max. number in a row
+  
+[Example `.repeat-auto-fill-fixed`](5_dynamic_sizing/styles.css)
+  
+- `repeat(auto-fill, minmax(100px, auto))` will wrap elements to max number in a row **but** extend the column evenly for **all** rows.
+
+[Example `.repeat-auto-fill-extend`](5_dynamic_sizing/styles.css)
+
+- `repeat(auto-fit, minmax(100px, auto))` will wrap elements and extend them to together **fill viewport width**.
+
+[Example `.repeat-auto-fit`](5_dynamic_sizing/styles.css)
